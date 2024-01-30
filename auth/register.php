@@ -1,37 +1,42 @@
 <?php 
-    $pageTitle= "Registrace";
-    include "../includes/header.php";
+$pageTitle = "Registrace";
+include "../includes/header.php";
 
-    if (isset($_POST['submit-btn'])) {
-        $filter_name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
-        $name = mysqli_real_escape_string($mysqli, $filter_name);
+if (isset($_POST['submit-btn'])) {
+    // Filtrace a úprava vstupních dat
+    $filter_name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $name = mysqli_real_escape_string($mysqli, $filter_name);
 
-        $filter_email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
-        $email = mysqli_real_escape_string($mysqli, $filter_email);
+    $filter_email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $email = mysqli_real_escape_string($mysqli, $filter_email);
 
-        $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
-        $password = mysqli_real_escape_string($mysqli, $filter_password);
+    $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = mysqli_real_escape_string($mysqli, $filter_password);
 
-        $filter_cpassword = filter_var($_POST['cpassword'], FILTER_SANITIZE_SPECIAL_CHARS);
-        $cpassword = mysqli_real_escape_string($mysqli, $filter_cpassword);
+    $filter_cpassword = filter_var($_POST['cpassword'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $cpassword = mysqli_real_escape_string($mysqli, $filter_cpassword);
 
-        $select_user = mysqli_query($mysqli, "SELECT * FROM `users` WHERE email = '$email' ") or die('query failed');
-
-        if (mysqli_num_rows($select_user) > 0) {
-            $message[] = 'uživatel už existuje';
-        } else {
-            if ($password != $cpassword) {
-                $message[] = 'hesla se neschodují.';
-            } else {
-               mysqli_query($mysqli, "INSERT INTO `users`(`name`, `email`, `password`) VALUES ('$name', '$email','$password')") or die('query selhalo'); 
-               $message[] = "Registrace byla úspěšná.";
-               header('location:/auth/login.php');
-            }
-        }
  
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+
+    $select_user = mysqli_query($mysqli, "SELECT * FROM `users` WHERE email = '$email' ") or die('query failed');
+
+    if (mysqli_num_rows($select_user) > 0) {
+        $message[] = 'Uživatel již existuje';
+    } else {
+        if ($password != $cpassword) {
+            $message[] = 'Hesla se neshodují.';
+        } else {
+         
+            mysqli_query($mysqli, "INSERT INTO `users`(`name`, `email`, `password`) VALUES ('$name', '$email','$hashed_password')") or die('query failed'); 
+            $message[] = "Registrace byla úspěšná.";
+            header('location:/auth/login.php');
+        }
     }
-    
+}
 ?>
+
 
 
 <section class="form-container">
@@ -43,7 +48,7 @@
         <input type="password" name="cpassword" placeholder="zopakujte heslo" required >
         <input type="submit" name="submit-btn" class="btn" value="registrovat" >
         <div class="text-comment">
-        <p>Máte zde účet? <a href="/auth/login.php">Přihlášení</a></p>
+        <p>Máte zde účet? <a href="/auth/login">Přihlášení</a></p>
         </div>
         <?php 
         if (isset($message)) {
