@@ -1,0 +1,6 @@
+# připojení k db
+config.php
+
+# misc
+.DS_Store
+*.pem
