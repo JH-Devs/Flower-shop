@@ -12,5 +12,5 @@
 
 ?>
 
-domovská stránka
+
 <?php include "./includes/footer.php" ?>

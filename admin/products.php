@@ -1,7 +1,8 @@
 <?php 
-  $pageTitle= "Nástěnka";
+  $pageTitle= "Produkty";
     include "./includes/admin-header.php";
 
+  
     session_start();
 
     $admin_id = $_SESSION['admin_id'];
@@ -11,6 +12,6 @@
 
 ?>
 <?php include "./components/navbar.php" ?>
+produkty
 
-Nástěnka
 <?php include "./includes/admin-footer.php" ?>

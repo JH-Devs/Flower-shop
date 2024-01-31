@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle= "Nástěnka";
+  $pageTitle= "Objednávky";
     include "./includes/admin-header.php";
 
     session_start();
@@ -11,6 +11,6 @@
 
 ?>
 <?php include "./components/navbar.php" ?>
+produkty
 
-Nástěnka
 <?php include "./includes/admin-footer.php" ?>
