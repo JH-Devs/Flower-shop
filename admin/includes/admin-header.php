@@ -2,6 +2,12 @@
 
 ?>
 <?php $current_page = basename($_SERVER['REQUEST_URI'], '.php');
+    session_start();
+
+    $admin_id = $_SESSION['admin_id'];
+    if (!isset($admin_id)) {
+        header('location:/auth/login');
+    }
  ?>
 
 <!DOCTYPE html>
@@ -45,19 +51,20 @@
         </li>
     </ul>
 </div>
-   <div class="user-box">
-   <a href="#" class="nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-user"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end bg-dark mt-0">
-            <li class="dropdown-item "><p class="">uživatel: <span><?php echo $_SESSION['admin_name']; ?></span> </p></li>
-            <li class="dropdown-item"> <p>email: <span><?php echo $_SESSION['admin_email']; ?></span> </p></li>
-            <li class="dropdown-item"><form method="post" class="logout">
-            <button class="btn-logout">odhlásit se</button>
-        </form></li>
-        </ul>
-    </li>
-   </ul>
-  </div>
+<div class="user-box">
+    <a href="#" class="nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-user"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end bg-dark mt-0">
+        <li class="dropdown-item"><p class="">uživatel: <span><?php echo $_SESSION['admin_name']; ?></span> </p></li>
+        <li class="dropdown-item"> <p>email: <span><?php echo $_SESSION['admin_email']; ?></span> </p></li>
+        <li class="dropdown-item">
+            <form method="post" class="logout">
+                <button class="btn-logout">odhlásit se</button>
+            </form>
+        </li>
+    </ul>
+</div>
+
 </nav>
 
