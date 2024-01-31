@@ -8,6 +8,10 @@
     if (!isset($admin_id)) {
         header('location:/auth/login');
     }
+    if (isset($_POST['logout'])) {
+        session_destroy();
+        header('location:/auth/login');
+    }
  ?>
 
 <!DOCTYPE html>
