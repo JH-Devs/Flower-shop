@@ -11,7 +11,7 @@
     }
 
 ?>
-<?php include "./components/navbar.php" ?>
+
 produkty
 
 <?php include "./includes/admin-footer.php" ?>

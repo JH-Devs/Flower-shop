@@ -10,7 +10,7 @@
     }
 
 ?>
-<?php include "./components/navbar.php" ?>
+
 
 Nástěnka
 <?php include "./includes/admin-footer.php" ?>

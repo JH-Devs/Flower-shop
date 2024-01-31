@@ -10,7 +10,6 @@
     }
 
 ?>
-<?php include "./components/navbar.php" ?>
-produkty
+zákazníci
 
 <?php include "./includes/admin-footer.php" ?>

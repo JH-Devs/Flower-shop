@@ -28,9 +28,9 @@
 .menu-mobile{
     background-color: white;
 }
-.user-box i{
+.user-box .nav-link i{
     cursor:pointer;
-    color:var(--white-alpha-40);
+    color:var(--pink);
 }
 
 .user-box{
