@@ -25,7 +25,10 @@
 .navbar-items {
     margin-left:50px;
 }
-.icons i{
+.menu-mobile{
+    background-color: white;
+}
+.user-box i{
     cursor:pointer;
     color:var(--white-alpha-40);
 }
@@ -44,11 +47,17 @@
 .user-box p span{
     color:var(--white-alpha-40);
 }
-.user-box .logout .btn{
+.user-box .logout .btn-logout{
+    border:none;
+    padding:2px 3px;
+    border-radius: 10px;
     font-size: 12px;
     background-color: #e7e5e4;
     transition: opacity 0.3s ease;
 }
-.user-box .logout .btn:hover{
+.user-box .logout .btn-logout:hover{
     opacity:0.8;
+}
+.user-box .dropdown-item:hover{
+    background-color: transparent;
 }

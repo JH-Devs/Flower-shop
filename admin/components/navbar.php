@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-admin">
   <div class="container-fluid">
     <a class="navbar-brand logo" href="/admin/dashboard">Admin <span>panel</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler menu-mobile" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse navbar-items" id="navbarSupportedContent">
@@ -26,15 +26,30 @@
         </li>
     </ul>
 </div>
-<div class="icons">
-        <i class="fa-solid fa-user"></i>
-    </div>
-    <div class="user-box d-flex ">
+   <div class="user-box">
+   <a href="#" class="nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user text-light"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end bg-dark mt-0">
+            <li class="dropdown-item "><p class="">uživatel: <span><?php echo $_SESSION['admin_name']; ?></span> </p></li>
+            <li class="dropdown-item"> <p>email: <span><?php echo $_SESSION['admin_email']; ?></span> </p></li>
+            <li class="dropdown-item"><form method="post" class="logout">
+            <button class="btn-logout">odhlásit se</button>
+        </form></li>
+        </ul>
+    </li>
+   </ul>
+  </div>
+</nav>
+
+<!--
+<div class="user-box d-flex ">
+    <i class="fa-solid fa-user"></i>
         <p class="">uživatel: <span><?php echo $_SESSION['admin_name']; ?></span> </p>
         <p>email: <span><?php echo $_SESSION['admin_email']; ?></span> </p>
         <form method="post" class="logout">
-            <button class="btn">odhlásit se</button>
+            <button class="btn-logout">odhlásit se</button>
         </form>
     </div>
-  </div>
-</nav>
+
+-->
