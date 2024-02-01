@@ -11,6 +11,9 @@
     --pink: #e84393;
     --box-shadow: 0 0.5rem 1 rem rgba(0,0,0,0.1);
 }
+a {
+    text-decoration:none;
+}
 .navbar-admin .logo{
     color: var(--pink); 
 }
@@ -110,11 +113,11 @@
 .card{
     padding:5px;
     width:250px;
-    height:450px;
+    height:auto;
 }
 .card img{
     border-radius: 10px;
-    height:350px;
+    height:300px;
 }
 .card h3{
     font-size:20px;
@@ -123,4 +126,29 @@
 .card p{
     text-align: right;
     color:var(--pink);
+}
+.card .product-detail{
+    max-height: 2em;
+    overflow: hidden;
+}
+.card a{
+    color:#0ea5e9;
+}
+.action{
+    display:flex;
+    justify-content: space-between;
+}
+.action i{
+    color:red;
+}
+.edit-product form{
+    width: 80%;
+    margin: auto;
+    padding:80px;
+    border-radius: 10px;
+
+}
+.edit-product form img{
+    height:300px;
+    margin:10px;
 }
