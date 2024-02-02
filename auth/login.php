@@ -2,7 +2,6 @@
     $pageTitle= "Přihlášení";
     include "../includes/header.php";
 
-    session_start();
 
 
     if (isset($_POST['submit-btn'])) {
@@ -23,7 +22,7 @@
                 $_SESSION['admin_id'] = $row['id'];
                 header('location:/admin/dashboard');
 
-            } else if($row['user_type'] == 'user') {
+            } else if($row['user_type'] == 'zákazník') {
                 $_SESSION['user_name'] = $row['name'];
                 $_SESSION['user_email'] = $row['email'];
                 $_SESSION['user_id'] = $row['id'];

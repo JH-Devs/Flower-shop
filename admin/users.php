@@ -70,8 +70,6 @@ if (isset($_GET['delete'])) {
             <td><?php echo $fetch_users['user_type']?></td>
             <td>
               <div>
-              <i class="fa-solid fa-pencil"></i>
-
                <a href="/admin/users?delete=<?php echo $fetch_users['id'] ?>" class="p-2 delete" onclick=" return conform('uživatel byl smazán');"><i class="fa-solid fa-trash-can text-danger"></i></a>
               </div>
             </td>

@@ -5,6 +5,7 @@
   if (empty($current_page)) {
     $current_page = 'index';
   }
+
 ?>
 
 
@@ -24,7 +25,7 @@
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
     <a class="navbar-brand logo" href="/">
-        Flower - shop
+        Flower - shop 
     </a>
     <button class="navbar-toggler menu-mobile" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,6 +38,7 @@
         <li class="nav-item">
         <a class="nav-link <?php echo ($current_page === 'products') ? 'active text-secondary fw-bold' : ''; ?>" href="/pages/products">Produkty</a>
         </li>
+        <li class="nav-item">
         <a class="nav-link <?php echo ($current_page === 'about') ? 'active text-secondary fw-bold' : ''; ?>" href="/pages/about">O nás</a>
         </li>
         <li class="nav-item">
@@ -60,19 +62,45 @@
         <i class="fa-solid fa-heart"></i>
     </a>
 </div>
+
+
+<?php session_start(); ?>
+
 <div class="user-box">
-    <a href="#" class="nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-user"></i>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end  mt-0">
-        <li class="dropdown-item">
-         <a href="/auth/login">Přihlášení</a>
-        </li>
-        <li class="dropdown-item">
-         <a href="/auth/register">Registrace</a>
-        </li>
-    </ul>
+    <?php if (isset($_SESSION['user_id'])) { ?>
+        <!-- Pokud je uživatel přihlášen -->
+        <a href="#" class="nav-link " role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end bg-light mt-0">
+            <li class="dropdown-item">
+                <p class="">uživatel: <span><?php echo $_SESSION['user_name']; ?></span> </p>
+            </li>
+            <li class="dropdown-item">
+                <p>email: <span><?php echo $_SESSION['user_email']; ?></span> </p>
+            </li>
+            <li class="dropdown-item">
+                <form method="post" action="logout.php" class="logout">
+                    <button class="btn-logout" name="logout">odhlásit se</button>
+                </form>
+            </li>
+        </ul>
+    <?php } else { ?>
+        <!-- Pokud uživatel není přihlášen -->
+        <a href="#" class="nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end mt-0">
+            <li class="dropdown-item">
+                <a href="/auth/login">Přihlášení</a>
+            </li>
+            <li class="dropdown-item">
+                <a href="/auth/register">Registrace</a>
+            </li>
+        </ul>
+    <?php } ?>
 </div>
+
 
 </nav>
 
