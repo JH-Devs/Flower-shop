@@ -49,7 +49,7 @@
     </div>
     <div class="col border m-4 p-4 bg-light rounded-2 ">
     <?php
-          $select_users = mysqli_query($mysqli, "SELECT * FROM `users` WHERE user_type = 'user' ") or die('chyba query');
+          $select_users = mysqli_query($mysqli, "SELECT * FROM `users` WHERE user_type = 'zákazník' ") or die('chyba query');
           $num_of_users = mysqli_num_rows($select_users);
         ?>
         <h3 class="text-info"><?php echo $num_of_users; ?></h3>

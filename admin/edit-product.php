@@ -85,3 +85,4 @@ closeBtn.addEventListener('click', () => {
 </script>
 
 <?php include "./includes/admin-footer.php" ?>
+
