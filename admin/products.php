@@ -42,7 +42,7 @@ if (isset($_GET['delete'])) {
 
                <div class="action">
                <a href="/admin/edit-product?edit=<?php echo $fetch_products['id'] ?>" class="p-1 edit">upravit</a>
-                <a href="/admin/products?delete=<?php echo $fetch_products['id'] ?>" class="p-1 delete" onclick=" return conform('produkt byl smazán');"><i class="fa-solid fa-trash-can"></i></a>
+                <a href="/admin/products?delete=<?php echo $fetch_products['id'] ?>" class="p-1 delete" onclick=" return confirm('produkt byl smazán');"><i class="fa-solid fa-trash-can"></i></a>
                </div>
               </div>
             </div>

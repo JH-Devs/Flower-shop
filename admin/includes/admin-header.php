@@ -63,7 +63,7 @@
         <li class="dropdown-item"><p class="">uživatel: <span><?php echo $_SESSION['admin_name']; ?></span> </p></li>
         <li class="dropdown-item"> <p>email: <span><?php echo $_SESSION['admin_email']; ?></span> </p></li>
         <li class="dropdown-item">
-            <form method="post" class="logout">
+            <form method="post" action="logout.php" class="logout">
                 <button class="btn-logout">odhlásit se</button>
             </form>
         </li>
