@@ -239,8 +239,18 @@ form .btn:hover{
     justify-content: space-between;
     cursor:pointer;  
 }
-
-
+.contact{
+    padding-top: 10%;
+}
+.contact .form{
+    border-radius: 10px;
+    
+}
+ .contact-info{
+    display:column;
+    text-align: center;
+    padding-top:20%;
+}
 
 .news-bg{
     background-image: url('./assets/img/newsletter.jpeg');
