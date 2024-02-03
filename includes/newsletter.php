@@ -1,5 +1,5 @@
 
-  <div class="row justify-content-center news-bg pt-5 pb-5">
+  <div class="row justify-content-center news-bg pt-5 pb-5 ">
     <div class="col-12 col-md-6">
       <h2 class="text-center mb-4 title">Přihlásit se k newsletteru</h2>
       <form action="#" method="post">

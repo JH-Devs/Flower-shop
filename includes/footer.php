@@ -1,6 +1,6 @@
 
 <footer class="container-fluid text-light  py-5">
-        <div class="container">
+        <div class="container footer">
             <div class="row">
                 <div class="col-md-3">
                     <h5>Společnost</h5>

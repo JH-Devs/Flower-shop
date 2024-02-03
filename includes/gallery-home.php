@@ -13,11 +13,12 @@
             <img src="../admin/image/gallery<?php echo $fetch_gallery['image']; ?>" alt="" class="card-img-top">
 
                 <h3><?php echo $fetch_gallery['name']; ?></h3>
-                <a data-bs-toggle="modal" data-bs-target="#imageModal<?php echo $fetch_gallery['id']; ?>"><i class="fa-solid fa-eye"></i></a>
+                <!--
+                <a data-bs-toggle="modal" data-bs-target="#imageModal<?php echo $fetch_gallery['id']; ?>"><i class="fa-solid fa-eye"></i></a> -->
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal 
     <div class="modal fade " id="imageModal<?php echo $fetch_gallery['id']; ?>" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -26,7 +27,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
         <?php 
             }
         }
