@@ -51,6 +51,9 @@
             <a class="nav-link <?php echo ($current_page === 'users') ? 'active text-secondary fw-bold' : ''; ?>" href="/admin/users">Zákazníci</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page === 'gallery') ? 'active text-secondary fw-bold' : ''; ?>" href="/admin/gallery">Galerie</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link <?php echo ($current_page === 'messages') ? 'active text-secondary fw-bold' : ''; ?>" href="/admin/messages">Zprávy</a>
         </li>
     </ul>

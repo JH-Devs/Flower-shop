@@ -1,4 +1,5 @@
-<footer class="container-fluid text-light py-5">
+
+<footer class="container-fluid text-light  py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -36,11 +37,12 @@
                         <li><i class="fa-solid fa-at text-light"></i> <a href="#">email@email.cz</a></li>
                         <br> 
                         <h6>Sledujte nás</h6>
-                        <div class="icon">
+                        <div class="icons">
                             <a href="#"><i class="fa-brands fa-facebook m-2"></i></a>
                             <a href="#"><i class="fa-brands fa-instagram"></i></a>
                             <a href="#"><i class="fa-brands fa-tiktok m-2"></i></a>
                             <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube m-2"></i></a>
 
                         </div>
                     </ul>
@@ -53,8 +55,6 @@
             </div>
         </div>
     </footer>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
