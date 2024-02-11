@@ -13,6 +13,12 @@
         <?php include "./includes/news.php"; ?>
         </section>
     </div>
+    
+    <div class="container-fluid">
+        <section class="categories">
+        <?php include "./includes/top-categories.php"; ?>
+        </section>
+    </div>
 
     <div class="container-fluid">
         <section class="gallery-home ">

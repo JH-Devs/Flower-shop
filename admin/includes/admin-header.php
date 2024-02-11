@@ -45,6 +45,9 @@
             <a class="nav-link <?php echo ($current_page === 'products') ? 'active text-secondary fw-bold' : ''; ?>" href="/admin/products">Produkty</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page === 'categories') ? 'active text-secondary fw-bold' : ''; ?>" href="/admin/categories">Kategorie</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link <?php echo ($current_page === 'orders') ? 'active text-secondary fw-bold' : ''; ?>" href="/admin/orders">Objednávky</a>
         </li>
         <li class="nav-item">

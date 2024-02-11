@@ -14,7 +14,6 @@
 }
 h1, h2, h3 {
     font-family: 'Dancing Script', cursive;
-    color:#545bba;
 }
 body{
     font-family: 'Playfair Display', serif;
@@ -40,6 +39,10 @@ a{
 a:hover{
     color: var(--white-alpha-40);
     font-weight: 700;
+}
+.btn-icon{
+    border:none;
+    background: transparent;
 }
 
 .form-container{
@@ -202,9 +205,11 @@ form .btn:hover{
     text-shadow: 2px 2px black;
     letter-spacing:1px;
 }
-
+.carousel-item{
+    object-fit:cover;
+}
 .carousel-item img{
-    height:450px;
+    height:550px;
 }
 
 .slider-chevron{
@@ -276,6 +281,24 @@ form .btn:hover{
     display:flex;
     justify-content: space-between;
     cursor:pointer;  
+}
+
+.card-2{
+    padding:15px;
+    width:200px;
+    height:auto;
+    cursor:pointer;
+}
+.card-2 img{
+    border-radius: 10px;
+    height:150px;
+    object-fit:cover;
+    border-radius:50%;
+}
+.card-2 h3{
+    font-size:20px;
+    margin: 5px 0 5px 0;
+    text-align:center;
 }
 .contact{
     padding-top: 10%;

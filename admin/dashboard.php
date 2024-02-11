@@ -47,6 +47,16 @@
         <h3 class="text-success"><?php echo $num_of_products; ?></h3>
         <p class="text-title">produkty</p>
     </div>
+
+    <div class="col border m-4 p-4 bg-light rounded-2 ">
+    <?php
+          $select_categories = mysqli_query($mysqli, "SELECT * FROM `categories` ") or die('chyba query');
+          $num_of_categories = mysqli_num_rows($select_categories);
+        ?>
+        <h3 class="text-secondary"><?php echo $num_of_categories; ?></h3>
+        <p class="text-title">kategorie</p>
+    </div>
+
     <div class="col border m-4 p-4 bg-light rounded-2 ">
     <?php
           $select_users = mysqli_query($mysqli, "SELECT * FROM `users` WHERE user_type = 'zákazník' ") or die('chyba query');
@@ -55,6 +65,7 @@
         <h3 class="text-info"><?php echo $num_of_users; ?></h3>
         <p class="text-title">zákazníci</p>
     </div>
+
     <div class="col border m-4 p-4 bg-light rounded-2">
     <?php
           $select_messages = mysqli_query($mysqli, "SELECT * FROM `messages`") or die('chyba query');
@@ -63,6 +74,7 @@
         <h3 class="text-danger"><?php echo $num_of_messages; ?></h3>
         <p class="text-title">zprávy</p>
     </div>
+    
   </div>
 </div>
 </section>

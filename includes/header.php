@@ -1,6 +1,6 @@
-<?php require __DIR__ . '/../config/config.php'; ?>
+<?php require __DIR__ . '/../config/config.php'; 
+  session_start();
 
-<?php
   $current_page = basename($_SERVER['REQUEST_URI'], '.php');
   if (empty($current_page)) {
     $current_page = 'index';
@@ -53,18 +53,21 @@
     </ul>
 </div>
 <div class="user-box">
-<a href="/pages/cart" class="nav-link" role="button">
-    <i class="fa-solid fa-cart-shopping"></i>
-    </a>
-</div>
-<div class="user-box">
-<a href="/pages/wishlist" class="nav-link" role="button">
-        <i class="fa-solid fa-heart"></i>
-    </a>
-</div>
-
-
-<?php session_start(); ?>
+      <a href="/pages/cart" class="nav-link" role="button">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    </div>
+    <div class="user-box">
+        <?php 
+        if (isset($_SESSION['user_id'])) {
+        $select_wishlist = mysqli_query($mysqli, "SELECT * FROM `wishlist` WHERE user_id ='$user_id' ") or die('chyba query');
+        $wistlist_num_rows = mysqli_num_rows($select_wishlist);
+        }
+        ?>
+      <a href="/pages/wishlist" class="nav-link" role="button">
+        <i class="fa-solid fa-heart"></i> <span>(<?php echo $wishlist_num_rows ?? 0; ?>)</span>
+      </a>
+    </div>
 
 <div class="user-box">
     <?php if (isset($_SESSION['user_id'])) { ?>

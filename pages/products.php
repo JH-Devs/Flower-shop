@@ -15,12 +15,20 @@
         
         <div class="col mb-4 ">
             <div class="card">
+            <a href="detail?pid=<?php echo $fetch_products['id']; ?>">
                 <img src="../admin/image/<?php echo $fetch_products['image']; ?>" alt="" class="card-img-top">
+            </a>
                 <h3><?php echo $fetch_products['name']; ?></h3>
                 <p><?php echo $fetch_products['price']; ?> Kč</p>
                 <div class="action-icons">
+
+                <button type="submit" name="add_to_wishlist" class="btn-icon">
                 <i class="fa-solid fa-heart text-danger"></i>
+                </button>
+
+                <button type="submit" name="add_to_cart" class="btn-icon">
                 <i class="fa-solid fa-cart-shopping text-success"></i>
+                </button>
                 </div>
             </div>
         </div>
