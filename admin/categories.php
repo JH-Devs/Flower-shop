@@ -49,7 +49,7 @@ if (isset($_GET['delete'])) {
             <div class="action">
             <a href="/admin/edit-category?edit=<?php echo $fetch_categories['id'] ?>" class="p-1 edit"><i class="fa-solid fa-pen text-info"></i></a>
 
-               <a href="/admin/category?delete=<?php echo $fetch_categories['id'] ?>" class="p-1  delete" onclick=" return conform('zpráva byla smazána');"><i class="fa-solid fa-trash-can text-danger"></i></a>
+               <a href="/admin/category?delete=<?php echo $fetch_categories['id'] ?>" class="p-1  delete" onclick=" return confirm('kategorie byla smazána');"><i class="fa-solid fa-trash-can text-danger"></i></a>
             </div>
             </td>
         </tr>

@@ -410,3 +410,46 @@ footer .copy{
 .products .q-span {
     margin-left: 10%;
 }
+
+.wishlist-price p{
+    color: gray;
+    text-align:center;
+}
+.wishlist-total{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+.wishlist-total button:nth-child(1){
+    border:none;
+    background:#38bdf8;
+    padding:5px 10px;
+    border-radius:5px;
+    margin:20px;
+}
+.wishlist-total button:nth-child(2){
+    border:none;
+    background:red;
+    padding:5px 10px;
+    border-radius:5px;
+    margin:20px;
+}
+
+.wishlist-total a{
+    text-decoration:none;
+    color: white;
+}
+.cart .cart-img{
+    height:100px;
+    width: 100px;
+    object-fit: cover;
+}
+.cart .inp-q{
+    width:40px;
+    height:20px;
+}
+.cart .update_quantity_btn{
+    border:none;
+    background:transparent;
+}

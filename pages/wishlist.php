@@ -4,40 +4,36 @@
 
      /* přidání produktu na wishlist */
  if (isset($_SESSION['user_id'])) {
-    if (isset($_POST['add_to_wishlist'])) {
-        $product_id = $_POST['product_id'];
-        $product_name = $_POST['product_name'];
-        $product_price = $_POST['product_price'];
-        $product_image = $_POST['product_image'];
-
-        $wishlist_number = mysqli_query($mysqli, "SELECT * FROM `wishlist` WHERE name='$product_name' AND user_id ='$user_id' ") or die ('chyba query');
-
-        $cart_number = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE name='$product_name' AND user_id ='$user_id' ") or die ('chyba query');
-        if (mysqli_num_rows($wishlist_number) >0) {
-            $message[]='produkt je už v seznamu přání';
-        } else if (mysqli_num_rows($cart_number)>0){
-            $message[]='produkt je už v košíku';
-        } else {
-            mysqli_query($mysqli, "INSERT INTO `wishlist`(`user_id`, `pid`, `name`, `price`, `image`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')");
-            $message = 'produkt byl přídán na seznam přání';
-        }
-
-    }
+   
     /* přidání produktu do košíku */
     if (isset($_POST['add_to_cart'])) {
         $product_id = $_POST['product_id'];
         $product_name = $_POST['product_name'];
         $product_price = $_POST['product_price'];
         $product_image = $_POST['product_image'];
+        $product_quantity =1;
 
         $cart_number = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE name='$product_name' AND user_id ='$user_id' ") or die ('chyba query');
        if (mysqli_num_rows($cart_number)>0){
             $message[]='produkt je už v košíku';
         } else {
-            mysqli_query($mysqli, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`, `image`, `quantity`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image', 1 )");
-            $message = 'produkt byl přídán do košíku';
+            mysqli_query($mysqli, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`, `image`, `quantity`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_quantity')");
+            $message[] = 'produkt byl přídán do košíku';
         }
 
+    }
+    /* smazání ze seznamu přání */
+    if (isset($_GET['delete'])) {
+        $delete_id = $_GET['delete'];
+
+        mysqli_query($mysqli, "DELETE FROM `wishlist` WHERE id='$delete_id' ") or die ('chyba query');
+        header('location:/pages/wishlist');
+    }
+    /* smazání všeho ze seznamu přání */
+    if (isset($_GET['delete_all'])) {
+
+        mysqli_query($mysqli, "DELETE FROM `wishlist` WHERE user_id='$user_id' ") or die ('chyba query');
+        header('location:/pages/wishlist');
     }
 
 }
@@ -95,11 +91,19 @@
             </form>
         </div>
         <?php 
+
+        $grand_total+= $fetch_wishlist['price'];
             }
-        }
+        } 
         ?>
     </div>
-
+    <div class="wishlist-price">
+    <p>Celková částka na seznamu přání: <span><?php echo $grand_total ?> Kč</span></p>
+    </div>
+        <div class="wishlist-total">
+           <button> <a href="pages/products">pokračovat v nákupu</a></button>
+            <button><a href="/pages/wishlist?delete_all" class="<?php echo ($grand_total > 1)?'':'disabled'; ?> " onclick="return confirm('opravdu vše smazat?')">smazat vše</a></button>
+        </div>
 
 </div>
 </section>

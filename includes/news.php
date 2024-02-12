@@ -11,13 +11,16 @@
         $wishlist_number = mysqli_query($mysqli, "SELECT * FROM `wishlist` WHERE name='$product_name' AND user_id ='$user_id' ") or die ('chyba query');
 
         $cart_number = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE name='$product_name' AND user_id ='$user_id' ") or die ('chyba query');
-        if (mysqli_num_rows($wishlist_number) >0) {
+
+        if (mysqli_num_rows($wishlist_number) > 0) {
             $message[]='produkt je už v seznamu přání';
-        } else if (mysqli_num_rows($cart_number)>0){
+
+        } else if (mysqli_num_rows($cart_number)> 0){
             $message[]='produkt je už v košíku';
+
         } else {
             mysqli_query($mysqli, "INSERT INTO `wishlist`(`user_id`, `pid`, `name`, `price`, `image`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')");
-            $message = 'produkt byl přídán na seznam přání';
+            $message[] = 'produkt byl přídán na seznam přání';
         }
 
     }
@@ -27,13 +30,14 @@
         $product_name = $_POST['product_name'];
         $product_price = $_POST['product_price'];
         $product_image = $_POST['product_image'];
+        $product_quantity = 1;
 
         $cart_number = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE name='$product_name' AND user_id ='$user_id' ") or die ('chyba query');
        if (mysqli_num_rows($cart_number)>0){
             $message[]='produkt je už v košíku';
         } else {
-            mysqli_query($mysqli, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`, `image`, `quantity`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image', 1 )");
-            $message = 'produkt byl přídán do košíku';
+            mysqli_query($mysqli, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`, `image`, `quantity`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image', '$product_quantity')");
+            $message[] = 'produkt byl přídán do košíku';
         }
 
     }
@@ -42,6 +46,18 @@
 ?>
 
     <h1 class="title text-center mt-4">Novinky </h1>
+    <?php 
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '
+                <div class="message">
+                    <span>'.$message.'</span>
+                    <i class="fa-solid fa-xmark" onclick="this.parentElement.remove()"></i>
+                </div>
+                ';
+            }
+        }
+    ?>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 m-4 ">
         <?php 
         $select_products = mysqli_query($mysqli, "SELECT * FROM `products` ORDER BY created_at DESC LIMIT 8") or die ('chyba query');
