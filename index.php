@@ -1,6 +1,7 @@
 <?php 
     $pageTitle= "Homepage";
     include "./includes/header.php";
+
 ?>
 <div class="homepage">
 <div class=" home ">

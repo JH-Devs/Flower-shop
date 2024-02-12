@@ -52,24 +52,30 @@
         </li>
     </ul>
 </div>
-<div class="user-box">
-      <a href="/pages/cart" class="nav-link" role="button">
-        <i class="fa-solid fa-cart-shopping"></i>
-      </a>
-    </div>
     <div class="user-box">
-        <?php 
-        if (isset($_SESSION['user_id'])) {
-        $select_wishlist = mysqli_query($mysqli, "SELECT * FROM `wishlist` WHERE user_id ='$user_id' ") or die('chyba query');
-        $wistlist_num_rows = mysqli_num_rows($select_wishlist);
-        }
-        ?>
+         <!-- wishlist-->
+         <?php 
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id']; // Inicializace proměnné $user_id
+    $select_wishlist = mysqli_query($mysqli, "SELECT * FROM `wishlist` WHERE user_id ='$user_id' ") or die('chyba query');
+    $wishlist_num_rows = mysqli_num_rows($select_wishlist); // Oprava jména proměnné
+}
+?>
       <a href="/pages/wishlist" class="nav-link" role="button">
         <i class="fa-solid fa-heart"></i> <span>(<?php echo $wishlist_num_rows ?? 0; ?>)</span>
       </a>
-    </div>
 
-<div class="user-box">
+      <!-- košík -->
+        <?php 
+        if (isset($_SESSION['user_id'])) {
+        $select_cart = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE user_id ='$user_id' ") or die('chyba query');
+        $cart_num_rows = mysqli_num_rows($select_cart);
+        }
+        ?>
+      <a href="/pages/cart" class="nav-link" role="button">
+        <i class="fa-solid fa-cart-shopping"></i> <span>(<?php echo $cart_num_rows ?? 0; ?>)</span>
+      </a>
+
     <?php if (isset($_SESSION['user_id'])) { ?>
         <!-- Pokud je uživatel přihlášen -->
         <a href="#" class="nav-link " role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
