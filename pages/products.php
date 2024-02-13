@@ -51,6 +51,7 @@
 <div class="container-fluid">
    
 <h1 class="title text-center mt-4">Produkty</h1>
+<?php include "../includes/banner.php" ;?>
 
     <?php 
         if (isset($message)) {

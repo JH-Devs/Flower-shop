@@ -14,6 +14,8 @@
         <?php include "./includes/news.php"; ?>
         </section>
     </div>
+
+    <?php include "./includes/banner.php" ;?>
     
     <div class="container-fluid">
         <section class="categories">
@@ -26,8 +28,6 @@
         <?php include "./includes/gallery-home.php"; ?>
         </section>
     </div>
-
-
     </div>
 </div>
 <div class="newsletter">

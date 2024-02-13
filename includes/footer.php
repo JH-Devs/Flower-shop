@@ -14,10 +14,10 @@
                 <div class="col-md-3">
                     <h5>Můj účet</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Přihlášení</a></li>
+                        <li><a href="/auth/login">Přihlášení</a></li>
                         <li><a href="#">Stav objednávky</a></li>
                         <li><a href="#">Slevové kupóny</a></li>
-                        <li><a href="#">Seznam přání</a></li>
+                        <li><a href="/pages/wishlist">Seznam přání</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">

@@ -89,7 +89,7 @@ if (isset($_SESSION['user_id'])) {
                 <p>email: <span><?php echo $_SESSION['user_email']; ?></span> </p>
             </li>
             <li class="dropdown-item">
-                <form method="post" action="logout.php" class="logout">
+                <form method="post" action="/auth/logout" class="logout">
                     <button class="btn-logout" name="logout">odhlásit se</button>
                 </form>
             </li>
