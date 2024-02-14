@@ -11,7 +11,7 @@
           $total_pendings = 0;
           $select_pendings = mysqli_query($mysqli, "SELECT * FROM `orders` WHERE payment_status = 'čeká na platbu' ") or die('chyba query');
           while ($fetch_pendings = mysqli_fetch_assoc($select_pendings)) {
-            $total_pendings += $fetch_pendings['total_price'];
+            $total_pendings += intval($fetch_pendings['total_price']);
           }
         ?>
         <h3 class="text-secondary"><?php echo $total_pendings; ?> Kč</h3>

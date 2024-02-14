@@ -10,24 +10,12 @@
         
         <div class="col mb-4 ">
             <div class="card">
-            <img src="../admin/image/gallery<?php echo $fetch_gallery['image']; ?>" alt="" class="card-img-top">
+            <img src="../admin/image/gallery<?php echo $fetch_gallery['image']; ?>" data-fancybox="gallery" alt="" class="card-img-top">
 
                 <h3><?php echo $fetch_gallery['name']; ?></h3>
-                <!--
-                <a data-bs-toggle="modal" data-bs-target="#imageModal<?php echo $fetch_gallery['id']; ?>"><i class="fa-solid fa-eye"></i></a> -->
+               
             </div>
         </div>
-
-        <!-- Modal 
-    <div class="modal fade " id="imageModal<?php echo $fetch_gallery['id']; ?>" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="../admin/image/gallery/<?php echo $fetch_gallery['image']; ?>" class="img-fluid" alt="Large Image">
-                </div>
-            </div>
-        </div>
-    </div> -->
         <?php 
             }
         }

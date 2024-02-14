@@ -22,7 +22,7 @@
 <div class="container">
     <h1 class="text-center title">Kontakt</h1>
     <div class="row mt-5 ">
-        <div class="col-md-6  bg-light p-5 form">
+        <div class="col-md-6  bg-light p-5 form mb-5">
             <h2>Kontaktní formulář</h2>
             <form action="#" method="post">
                 <div class="mb-3">

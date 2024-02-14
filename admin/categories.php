@@ -31,7 +31,7 @@ if (isset($_GET['delete'])) {
         <th>ID</th>
         <th>Obrázek</th>
         <th>Název</th>
-        <th>Akce</th>
+        <th class="td-actions">Akce</th>
       </tr>
     </thead>
     <tbody>

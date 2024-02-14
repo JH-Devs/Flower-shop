@@ -22,7 +22,7 @@ if (isset($_GET['delete'])) {
 <button onclick="window.location.href='/admin/add-image'" type="button" class="btn-add">Přidat obrázek</button>
 
 <section class="products">
-  <div class="container-fluid">
+  <div class="container">
     <h1 class="title m-4">Galerie</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 m-4 ">
       <?php 
@@ -30,9 +30,9 @@ if (isset($_GET['delete'])) {
         if(mysqli_num_rows($select_gallery) > 0) {
           while($fetch_gallery= mysqli_fetch_assoc($select_gallery)) {
       ?>
-            <div class="col mb-4 m-2">
+            <div class="col-xl-2 mb-2 m-5">
               <div class="card">
-                <img src="image/gallery<?php echo $fetch_gallery['image']; ?>" alt="" class="card-img-top">
+                <img src="image/gallery<?php echo $fetch_gallery['image']; ?>" alt="" class="card-img-top" data-fancybox="gallery">
                 <h3><?php echo $fetch_gallery['name']; ?></h3>
                 
 

@@ -145,9 +145,13 @@ a {
 .card a{
     color:#0ea5e9;
 }
+.td-actions{
+    width:80px;
+}
 .action{
     display:flex;
-    justify-content: space-between;
+    justify-content: start;
+    gap:10px;
 }
 .action i{
     color:red;

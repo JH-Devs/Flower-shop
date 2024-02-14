@@ -17,7 +17,7 @@
         
         <div class="col mb-4 ">
             <div class="card" >
-            <img src="../admin/image/gallery<?php echo $fetch_gallery['image']; ?>" alt="" class="card-img-top">
+            <img src="../admin/image/gallery<?php echo $fetch_gallery['image']; ?>" data-fancybox="gallery" alt="" class="card-img-top">
 
                 <h3><?php echo $fetch_gallery['name']; ?></h3>
 
@@ -30,7 +30,6 @@
     </div>
 </div>
 </section>
-
 
 
 

@@ -513,7 +513,7 @@ footer .copy{
         object-fit:cover;
     }
     .checkout{
-        height: 100vh;
+        min-height: 100vh;
     }
     .checkout .display-order{
         box-shadow: var(--box-shadow);
@@ -535,4 +535,13 @@ footer .copy{
         background: var(--pink);
         color:white;
         cursor: pointer;
+    }
+    .payment{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        line-height:2;
+    }
+    .payment .input{
+        width:350px;
     }

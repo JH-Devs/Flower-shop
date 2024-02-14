@@ -102,7 +102,7 @@
     <p>Celková částka na seznamu přání: <span><?php echo $grand_total ?> Kč</span></p>
     </div>
         <div class="wishlist-total">
-           <button> <a href="pages/products">pokračovat v nákupu</a></button>
+           <button> <a href="pages/products">nakupovat</a></button>
             <button><a href="/pages/wishlist?delete_all" class="<?php echo ($grand_total > 1)?'':'disabled'; ?> " onclick="return confirm('opravdu vše smazat?')">smazat vše</a></button>
         </div>
 
