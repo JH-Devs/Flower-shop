@@ -3,18 +3,10 @@
 
     <div class="carousel-item active">
       <img src="../assets/img/slider/slider2.png" class="d-block w-100" alt="...">
-   <!--   <div class="carousel-caption d-none d-md-block">
-        <h5>První obrázek</h5>
-        <p>Nějaký popisek nebo text k prvnímu obrázku.</p>
-      </div> -->
     </div>
 
     <div class="carousel-item">
       <img src="../assets/img/slider/slider3.png" class="d-block w-100" alt="...">
- <!--     <div class="carousel-caption d-none d-md-block">
-        <h5>Druhý obrázek</h5>
-        <p>Nějaký popisek nebo text k druhému obrázku.</p>
-      </div> -->
     </div>
 
   </div>
@@ -28,25 +20,22 @@
   </button>
 </div>
 
-<div class="row">
-  <div class="col mini-col">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+  <div class="col-4 mini-col">
     <div class="detail">
-      <span>30% dnes sleva</span>
-      <h1>Na celý sortiment</h1>
+      <h3>30% sleva na celý sortiment</h3>
       <a class="btn-add" href="/pages/products">nakupovat</a>
     </div>
   </div>
-  <div class="col mini-col">
+  <div class="col-4 mini-col">
     <div class="detail">
-      <span>10% sleva</span>
-      <h1>Pro registrované zákazníky</h1>
+      <h3>10% sleva pro registrované zákazníky</h1>
       <a class="btn-add" href="/pages/products">nakupovat</a>
     </div>
   </div>
-  <div class="col mini-col">
+  <div class="col-4 mini-col">
     <div class="detail">
-      <span>Doprava zdarma</span>
-      <h1>Na všechny objednávky</h1>
+      <h3>Doprava zdarma na všechny objednávky</h3>
       <a class="btn-add" href="/pages/products">nakupovat</a>
     </div>
   </div>

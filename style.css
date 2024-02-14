@@ -228,13 +228,11 @@ form .btn:hover{
     position:absolute;
     bottom:30%;
     left:10%;
+    
 }
 .mini-col h1{
     margin-bottom: 1rem;
     font-size: 28px;
-}
-.mini-col span{
-    font-size: 40px;
 }
 
 .mini-col a{
@@ -252,6 +250,9 @@ form .btn:hover{
 }
 .mini-col:nth-child(3){
     background: url('./assets/img/slider/mini-slider-2.png');
+}
+.mini-col .btn-add {
+    margin:30px;
 }
 .card{
     padding:15px;
@@ -480,6 +481,7 @@ footer .copy{
  .carousel-inner{
     height:500px;
  }
+
     .reviews .review-img{
         position: relative;
         width: 200px; 
